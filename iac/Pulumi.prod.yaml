@@ -1,0 +1,3 @@
+config:
+  fh-burgenland-bswe-3b-iac:image: gcr.io/cloudrun/hello
+  fh-burgenland-bswe-3b-iac:memory: 128Mi

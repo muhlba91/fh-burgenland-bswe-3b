@@ -1,0 +1,71 @@
+---
+openapi: 3.0.3
+info:
+  title: Simple Calculator
+  description: |-
+    This service provides a simple calculator.
+    
+    Currently supported operations:
+      - divide
+      - multiply
+  version: 1.0.0
+tags:
+  - name: calculator
+    description: calculator operations
+paths:
+  /divide:
+    get:
+      tags:
+        - calculator
+      summary: Division
+      description: Divides a given number a by b.
+      operationId: divide
+      parameters:
+        - name: a
+          in: query
+          required: true
+          schema:
+            type: integer
+          example: 1
+        - name: b
+          in: query
+          required: true
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: successful operation
+          content:
+            text/plan:
+              schema:
+                type: integer
+              example: 1
+  /multiply:
+    get:
+      tags:
+        - calculator
+      summary: Multiplication
+      description: Multiplies a given number a by b.
+      operationId: multiply
+      parameters:
+        - name: a
+          in: query
+          required: true
+          schema:
+            type: integer
+          example: 1
+        - name: b
+          in: query
+          required: true
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: successful operation
+          content:
+            text/plan:
+              schema:
+                type: integer
+              example: 1
