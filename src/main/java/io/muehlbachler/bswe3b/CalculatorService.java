@@ -2,12 +2,18 @@ package io.muehlbachler.bswe3b;
 
 import org.springframework.stereotype.Service;
 
-// FIXME: add javadoc
+/**
+ * @author Julian Zankl
+ */
 @Service
 public class CalculatorService {
-    // FIXME: add javadoc
+    /**
+     * Divides the given dividend with the divisor and returns the result (quotient).
+     * @param a dividend
+     * @param b divisor
+     * @return quotient
+     */
     public int divide(final int a, final int b) {
-        // FIXME: implement
-        return -1;
+        return b < 0 ? 0 : a/b;
     }
 }
