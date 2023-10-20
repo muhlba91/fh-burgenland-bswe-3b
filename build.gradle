@@ -19,7 +19,7 @@ dependencies {
 }
 
 java {
-    sourceCompatibility = '20'
+    sourceCompatibility = '18'
 }
 
 tasks.named('test') {
