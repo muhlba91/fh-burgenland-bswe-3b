@@ -20,11 +20,30 @@ public class CalculatorControllerTest {
 
     @Test
     public void testDividePositiveNumberNoRemainder() {
-        when(calculator.divide(1, 1)).thenReturn(2);
+        when(calculator.divide(1, 1)).thenReturn(1);
 
         assertEquals(1, controller.divide(1, 1));
         verify(calculator, times(1)).divide(1, 1);
     }
+    @Test
+    public void testDividePositiveNumberWithRemainder() {
+        when(calculator.divide(5, 2)).thenReturn(2);
 
-    // FIXME: implement more tests
+        assertEquals(2, controller.divide(5, 2));
+        verify(calculator, times(1)).divide(5, 2);
+    }
+    @Test
+    public void testDivideZeroReturnZero() {
+        when(calculator.divide(1, 0)).thenReturn(0);
+
+        assertEquals(0, controller.divide(1, 0));
+        verify(calculator, times(1)).divide(1, 0);
+    }
+    @Test
+    public void testDivideMinusOneReturnZero() {
+        when(calculator.divide(1, -1)).thenReturn(0);
+
+        assertEquals(0, controller.divide(1, -1));
+        verify(calculator, times(1)).divide(1, -1);
+    }
 }

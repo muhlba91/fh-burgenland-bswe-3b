@@ -15,7 +15,7 @@ public class CalculatorService {
      * @return the result of the division or 0 if b < 0
      */
     public int divide(final int a, final int b) {
-        if(b < 0){
+        if(b <= 0){
             return 0;
         } else {
             return a/b;

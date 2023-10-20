@@ -22,5 +22,20 @@ public class CalculatorControllerHttpTest {
                 .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("1")));
     }
 
-    // FIXME: implement more tests
+    @Test
+    public void testDividePositiveNumberRemainder() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/divide?a=5&b=2")).andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("2")));
+    }
+    @Test
+    public void testDivideZeroReturnZero() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/divide?a=1&b=0")).andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("0")));
+    }
+    @Test
+    public void testDivideMinusOneReturnZero() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/divide?a=1&b=-1")).andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("0")));
+    }
+
 }
