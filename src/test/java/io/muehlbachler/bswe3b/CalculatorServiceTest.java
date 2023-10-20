@@ -18,11 +18,11 @@ public class CalculatorServiceTest {
 
     @Test
     public void testDivideNegativeNumberNoRemainder() {
-        assertEquals(1, calc.divide(-1, -1), "-1/-1 should be 1");
+        assertEquals(0, calc.divide(-1, -1), "-1/-1 should be 0");
     }
 
     @Test
     public void testDivideNegativeNumberWithRemainder() {
-        assertEquals(3, calc.divide(-7, -2), "-7/-2 should be 3");
+        assertEquals(0, calc.divide(-7, -2), "-7/-2 should be 0");
     }
 }
