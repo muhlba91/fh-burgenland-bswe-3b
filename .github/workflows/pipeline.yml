@@ -26,7 +26,7 @@ jobs:
     - name: Setup Java
       uses: actions/setup-java@v3
       with:
-        java-version: '18'
+        java-version: '20'
         distribution: 'temurin'
         
     - name: Setup Gradle
