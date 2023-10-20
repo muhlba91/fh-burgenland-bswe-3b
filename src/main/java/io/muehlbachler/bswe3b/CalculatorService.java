@@ -15,11 +15,10 @@ public class CalculatorService {
      */
     public int divide(final int a, final int b) {
         // FIXME: implement
-        int solution = a/b;
-        if (solution < 0) {
+        if (b <= 0) {
             return 0;
         } else {
-            return solution;
+            return a/b;
         }
     }
 }
