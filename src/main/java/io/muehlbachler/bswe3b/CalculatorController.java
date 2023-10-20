@@ -14,4 +14,9 @@ public class CalculatorController {
     int divide(@RequestParam(value = "a") final int a, @RequestParam(value = "b") final int b) {
         return calculator.divide(a, b);
     }
+
+    @GetMapping("/multiply")
+    int multiply(@RequestParam(value = "a") final int a, @RequestParam(value = "b") final int b) {
+        return calculator.multiply(a, b);
+    }
 }

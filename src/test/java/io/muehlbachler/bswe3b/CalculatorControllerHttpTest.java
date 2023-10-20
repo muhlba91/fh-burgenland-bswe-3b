@@ -8,6 +8,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 import org.hamcrest.Matchers;
 
 @SpringBootTest
@@ -22,5 +26,21 @@ public class CalculatorControllerHttpTest {
                 .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("1")));
     }
 
-    // FIXME: implement more tests
+    @Test
+    public void testDivideZeroReturnErrorCode() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/divide?a=1&b=0")).andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("-1")));
+    }
+
+    @Test
+    void testMultiplyNumberOneByOneReturnsOne() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/multiply?a=1&b=1")).andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("1")));
+    }
+
+    @Test
+    void testMultiplyNumbersOneByZeroReturnsZero() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/multiply?a=1&b=0")).andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("0")));
+    }
 }

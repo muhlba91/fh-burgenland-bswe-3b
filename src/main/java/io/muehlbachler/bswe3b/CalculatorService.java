@@ -14,7 +14,18 @@ public class CalculatorService {
      * @return Returns the result of the division.
      */
     public int divide(final int a, final int b) {
-        // FIXME: implement
-        return -1;
+
+        return (b > 0) ? a / b : -1;
+    }
+
+    /**
+     * Multiplies the given number a by b.
+     * @param a The multiplier.
+     * @param b The multiplicand.
+     * @return Returns the result of the division.
+     */
+    public int multiply(final int a, final int b) {
+
+        return a * b;
     }
 }
