@@ -11,5 +11,23 @@ public class CalculatorServiceTest {
         assertEquals(1, calc.divide(1, 1), "1/1 should be 1");
     }
 
-    // FIXME: implement more tests
+    @Test
+    public void testDividePositiveNumberWithRemainder() {
+        assertEquals(3, calc.divide(7, 2), "7/2 should be 3");
+    }
+
+    @Test
+    public void testDivideNegativeNumberNoRemainder() {
+        assertEquals(0, calc.divide(-1, -1), "-1/-1 should be 0");
+    }
+
+    @Test
+    public void testDivideNegativeNumberWithRemainder() {
+        assertEquals(0, calc.divide(-7, -2), "-7/-2 should be 0");
+    }
+
+    @Test
+    public void testDivideZero() {
+        assertEquals(0, calc.divide(3, 0), "3/0 should be 0");
+    }
 }

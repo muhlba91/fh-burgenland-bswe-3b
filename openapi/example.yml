@@ -53,3 +53,32 @@ paths:
               schema:
                 type: string
               example: to be converted to lower case
+
+  /divide:
+    get:
+      tags:
+        - string
+      summary: Performs the division of two numbers.
+      description: Performs the division of two numbers.
+      operationId: divide
+      parameters:
+        - name: a
+          in: path
+          required: true
+          schema:
+            type: number
+            example: 10
+        - name: b
+          in: path
+          required: true
+          schema:
+            type: number
+            example: 2
+      responses:
+        '200':
+          description: Successful operation.
+          content:
+            text/plan:
+              schema:
+                type: number
+              example: 5
