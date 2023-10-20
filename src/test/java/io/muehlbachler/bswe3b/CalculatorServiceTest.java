@@ -11,5 +11,8 @@ public class CalculatorServiceTest {
         assertEquals(1, calc.divide(1, 1), "1/1 should be 1");
     }
 
-    // FIXME: implement more tests
+    @Test
+    public void testDivideZeroReturnErrorCode() {
+        assertEquals(-1, calc.divide(1, 0), "1/0 should be -1");
+    }
 }
