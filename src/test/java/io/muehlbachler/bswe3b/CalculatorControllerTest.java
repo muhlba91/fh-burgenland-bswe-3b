@@ -20,7 +20,7 @@ public class CalculatorControllerTest {
 
     @Test
     public void testDividePositiveNumberNoRemainder() {
-        when(calculator.divide(1, 1)).thenReturn(2);
+        when(calculator.divide(1, 1)).thenReturn(1);
 
         assertEquals(1, controller.divide(1, 1));
         verify(calculator, times(1)).divide(1, 1);
