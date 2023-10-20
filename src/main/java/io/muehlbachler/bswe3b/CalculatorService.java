@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class CalculatorService {
     /**
-     * Divides the given dividend with the divisor and returns the result (quotient).
-     * @param a dividend
-     * @param b divisor
-     * @return quotient
+     * Divides a by b.
+     * @param a The dividend
+     * @param b The divisor
+     * @return The quotient
      */
     public int divide(final int a, final int b) {
         return b < 0 ? 0 : a/b;
