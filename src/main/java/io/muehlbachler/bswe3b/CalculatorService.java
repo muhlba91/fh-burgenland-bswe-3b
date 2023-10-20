@@ -14,6 +14,6 @@ public class CalculatorService {
      * @return The quotient
      */
     public int divide(final int a, final int b) {
-        return b < 0 ? 0 : a/b;
+        return b <= 0 ? 0 : a/b;
     }
 }
