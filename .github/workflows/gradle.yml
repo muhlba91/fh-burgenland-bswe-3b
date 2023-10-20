@@ -27,6 +27,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '21'
+        distribution: 'corretto'
     - name: Build with Gradle
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
   test:
@@ -37,6 +38,7 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           java-version: '21'
+          distribution: 'corretto'
       - name: Run the Gradle package task
         uses: gradle/gradle-build-action@749f47bda3e44aa060e82d7b3ef7e40d953bd629
       - name: Test Start
