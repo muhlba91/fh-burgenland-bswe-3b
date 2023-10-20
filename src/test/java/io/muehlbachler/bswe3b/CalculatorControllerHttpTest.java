@@ -39,4 +39,10 @@ public class CalculatorControllerHttpTest {
         mvc.perform(MockMvcRequestBuilders.get("/divide?a=-7&b=-2")).andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("0")));
     }
+
+    @Test
+    public void testDivideZero() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/divide?a=3&b=0")).andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("0")));
+    }
 }

@@ -49,4 +49,12 @@ public class CalculatorControllerTest {
         assertEquals(0, controller.divide(-7, -2));
         verify(calculator, times(1)).divide(-7, -2);
     }
+
+    @Test
+    public void testDivideZero() {
+        when(calculator.divide(3, 0)).thenReturn(0);
+
+        assertEquals(0, controller.divide(3, 0));
+        verify(calculator, times(1)).divide(3, 0);
+    }
 }

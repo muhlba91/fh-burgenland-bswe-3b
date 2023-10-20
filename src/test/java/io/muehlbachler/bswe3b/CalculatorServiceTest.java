@@ -25,4 +25,9 @@ public class CalculatorServiceTest {
     public void testDivideNegativeNumberWithRemainder() {
         assertEquals(0, calc.divide(-7, -2), "-7/-2 should be 0");
     }
+
+    @Test
+    public void testDivideZero() {
+        assertEquals(0, calc.divide(3, 0), "3/0 should be 0");
+    }
 }

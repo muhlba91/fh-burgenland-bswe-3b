@@ -57,4 +57,13 @@ class CalculatorControllerHttpMockTest {
                 .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("0")));
         verify(calculator, times(1)).divide(-7, -2);
     }
+
+    @Test
+    void testDivideZero() throws Exception {
+        when(calculator.divide(3, 0)).thenReturn(0);
+
+        mvc.perform(MockMvcRequestBuilders.get("/divide?a=3&b=0")).andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("0")));
+        verify(calculator, times(1)).divide(3, 0);
+    }
 }
