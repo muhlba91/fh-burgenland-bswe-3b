@@ -24,10 +24,37 @@ class CalculatorControllerHttpMockTest {
 
     @Test
     void testDividePositiveNumberNoRemainder() throws Exception {
-        when(calculator.divide(1, 1)).thenReturn(2);
+        when(calculator.divide(1, 1)).thenReturn(1);
 
         mvc.perform(MockMvcRequestBuilders.get("/divide?a=1&b=1")).andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("1")));
         verify(calculator, times(1)).divide(1, 1);
+    }
+
+    @Test
+    void testDividePositiveNumberWithRemainder() throws Exception {
+        when(calculator.divide(7, 2)).thenReturn(3);
+
+        mvc.perform(MockMvcRequestBuilders.get("/divide?a=7&b=2")).andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("3")));
+        verify(calculator, times(1)).divide(7, 2);
+    }
+
+    @Test
+    void testDivideNegativeNumberNoRemainder() throws Exception {
+        when(calculator.divide(-1, -1)).thenReturn(0);
+
+        mvc.perform(MockMvcRequestBuilders.get("/divide?a=-1&b=-1")).andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("0")));
+        verify(calculator, times(1)).divide(-1, -1);
+    }
+
+    @Test
+    void testDivideNegativeNumberWithRemainder() throws Exception {
+        when(calculator.divide(1, 1)).thenReturn(0);
+
+        mvc.perform(MockMvcRequestBuilders.get("/divide?a=-7&b=-2")).andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("0")));
+        verify(calculator, times(1)).divide(-7, -2);
     }
 }
