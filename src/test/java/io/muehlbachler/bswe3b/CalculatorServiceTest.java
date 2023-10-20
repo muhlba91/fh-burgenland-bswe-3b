@@ -15,4 +15,14 @@ public class CalculatorServiceTest {
     public void testDivideZeroReturnErrorCode() {
         assertEquals(-1, calc.divide(1, 0), "1/0 should be -1");
     }
+
+    @Test
+    public void testMultiplyNumberOneByOneReturnsOne() {
+        assertEquals(1, calc.multiply(1, 1), "1*1 should be 1");
+    }
+
+    @Test
+    public void testMultiplyNumbersOneByZeroReturnsZero() {
+        assertEquals(0, calc.multiply(1, 0), "1*0 should be 0");
+    }
 }
