@@ -1,0 +1,27 @@
+---
+name: Group A
+
+# pipeline ausführen:
+#   bei jedem push
+#   bei jedem pull request
+
+
+# wir haben ein gradle projekt mit java 20
+
+
+# folgende "tasks" oder "commands" sollen ausgeführt werden:
+#  gradle test
+#  gradle build
+
+# gradle build soll erst bei erfolgreichem gradle test ausgeführt werden
+
+
+# weitere gradle commands, die relevant sein werden:
+#  gradle bootJar (*)
+#  gradle bootRun
+#  gradle clean
+#  gradle check
+#
+#  gradle checkstyleMain / checkstyleTest
+#  gradle pmdMain / pmdTest
+# ...
