@@ -6,8 +6,8 @@ on:
     pull_request:
 
 jobs:
-    test_all:
-        name: Tests Group
+    check_all:
+        name: Checks Group
         runs-on: ubuntu-latest
 
         steps:
@@ -16,13 +16,13 @@ jobs:
               with:
                 java-version: '20'
                 distribution: 'corretto'
-            - run: gradle test
+            - run: gradle check
 
     build_all:
         name: Build Group
         runs-on: ubuntu-latest
         needs: 
-            - test_all
+            - check_all
 
         steps:
             - uses: actions/checkout@v4
@@ -32,6 +32,35 @@ jobs:
                 distribution: 'corretto'
             - run: gradle build
 
-# we want to run:
+    hadolint_all:
+        name: Lint Dockerfile
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+            - uses: hadolint/hadolint-action@v3.1.0
+              with:
+                dockerfile: Dockerfile
+
+# folgendes soll ausgeführt werden:
 # checkstyle & pmd checks
+  # gradle check - tests, checkstyle, pmd
+  # gradle checkstyleMain checkstyleTest pmdMain pmdTest
 # hadolint
+
+
+
+#4 ADD: Implemented config to run the service registry
+# feat(config): implemented config to run the service registry; fix #4
+#11 ADD: Get-Request method to retrieve the actual port of the instance
+# chore: fixes #11 to add GET to retrieve the actual port
+
+
+/**
+ * Returns the server port number.
+ * @return port number
+*/
+@GetMapping("/environment")
+public int retrieveEnvironment() { 
+    return environment.getProperty("local.server.port");
+}
