@@ -1,13 +1,12 @@
-# FH Burgenland: Softwaremanagement 2 - IaC
+# FH Burgenland: Softwaremanagement 2 - IaC Terraform
 
-This directory contains the Infrastructure as Code example using [Pulumi](http://pulumi.com).
+This directory contains the Infrastructure as Code example using [Terraform](https://www.terraform.io).
 
 ---
 
 ## Requirements
 
-- [NodeJS](https://nodejs.org/en), and [yarn](https://yarnpkg.com)
-- [Pulumi](https://www.pulumi.com/docs/install/)
+- [Terraform](https://developer.hashicorp.com/terraform/downloads)
 
 ## Environment Variables
 
@@ -22,8 +21,8 @@ To successfully run, and configure the Pulumi plugins, you need to set a list of
 The stack can be deployed via:
 
 ```bash
-yarn install
-yarn build; pulumi up
+terraform init
+terraform apply
 ```
 
 ## Destroying the Infrastructure
@@ -31,6 +30,5 @@ yarn build; pulumi up
 The entire infrastructure can be destroyed via:
 
 ```bash
-yarn install
-yarn build; pulumi destroy
+terraform destroy
 ```
