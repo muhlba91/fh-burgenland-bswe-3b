@@ -56,11 +56,11 @@ jobs:
 # chore: fixes #11 to add GET to retrieve the actual port
 
 
-/**
- * Returns the server port number.
- * @return port number
-*/
-@GetMapping("/environment")
-public int retrieveEnvironment() { 
-    return environment.getProperty("local.server.port");
-}
+# /**
+#  * Returns the server port number.
+#  * @return port number
+# */
+# @GetMapping("/environment")
+# public int retrieveEnvironment() { 
+#     return environment.getProperty("local.server.port");
+# }
