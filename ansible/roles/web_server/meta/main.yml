@@ -1,0 +1,24 @@
+---
+galaxy_info:
+  namespace: muhlba91
+  role_name: web_server
+  description: Role to install and configure our web server
+  author: Daniel Muehlbachler-Pietrzykowski <daniel.muehlbachler@niftyside.io>
+
+  license: GPL-2.0-or-later
+
+  min_ansible_version: 7.0.0
+
+  platforms:
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+
+  galaxy_tags:
+    - webserver
+    - nginx
+
+dependencies: []

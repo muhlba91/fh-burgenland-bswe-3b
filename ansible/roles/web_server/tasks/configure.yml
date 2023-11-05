@@ -1,0 +1,12 @@
+---
+- name: Web Server | Configure | index.html
+  ansible.builtin.template:
+    src: templates/index.html.j2
+    dest: "{{ web_server_directory }}/index.html"
+    mode: "0644"
+
+- name: Web Server | Configure | static.html
+  ansible.builtin.copy:
+    src: files/static.html
+    dest: "{{ web_server_directory }}/static.html"
+    mode: "0644"

@@ -1,0 +1,9 @@
+---
+- name: Web Server
+  hosts: web-server
+  gather_facts: true
+  any_errors_fatal: true
+  tags:
+    - web-server
+  roles:
+    - web_server

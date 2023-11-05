@@ -1,0 +1,3 @@
+---
+web_server_directory: /var/www/html
+web_server_content: example content
