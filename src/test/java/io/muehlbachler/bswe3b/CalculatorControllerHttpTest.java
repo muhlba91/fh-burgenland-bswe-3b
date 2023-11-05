@@ -12,15 +12,31 @@ import org.hamcrest.Matchers;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class CalculatorControllerHttpTest {
+class CalculatorControllerHttpTest {
     @Autowired
     private MockMvc mvc;
 
     @Test
-    public void testDividePositiveNumberNoRemainder() throws Exception {
+    void testDividePositiveNumberNoRemainder() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/divide?a=1&b=1")).andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("1")));
     }
 
-    // FIXME: implement more tests
+    @Test
+    void testDividePositiveNumberWithRemainder() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/divide?a=1&b=2")).andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("0")));
+    }
+
+    @Test
+    void testDivideByZero() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/divide?a=1&b=0")).andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("0")));
+    }
+
+    @Test
+    void testMultiply() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/multiply?a=1&b=2")).andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("2")));
+    }
 }

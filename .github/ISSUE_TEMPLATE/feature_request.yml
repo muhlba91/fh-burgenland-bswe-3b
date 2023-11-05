@@ -1,0 +1,43 @@
+---
+name: Feature Request
+description: File a feature or enhancement request
+title: "[Feature]: "
+labels:
+  - enhancement
+  - triage
+assignees:
+  - muhlba91
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this feature request!
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Tell us what your request is about. Please include as many details as possible.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Possible Alternatives
+      description: Are there any alternatives our considered?
+    validations:
+      required: false
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria / Test Cases
+      description: Tell us about your use case and how we can verify it when adding this feature.
+      placeholder: Please explain in detail all test/use cases relevant to this request, and include possible acceptance criteria that you require for the feature to work.
+    validations:
+      required: false
+  - type: textarea
+    id: additional-information
+    attributes:
+      label: Additional Information
+      description: Let us know any additional information.
+    validations:
+      required: false

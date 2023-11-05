@@ -1,0 +1,57 @@
+---
+name: Group A
+
+# pipeline ausführen:
+#   bei jedem push
+#   bei jedem pull request
+on:
+    push:
+    pull_request:
+
+# wir haben ein gradle projekt mit java 20
+
+
+# folgende "tasks" oder "commands" sollen ausgeführt werden:
+#  gradle test
+#  gradle build
+
+jobs:
+    test_a:
+        runs-on: ubuntu-latest
+        name: Tests Group A
+
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-java@v3
+              with:
+                distribution: 'corretto'
+                java-version: '20'
+            - run: gradle test
+
+    build_a:
+        runs-on: ubuntu-latest
+        name: Build Group A
+        needs: 
+            - test_a
+
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-java@v3
+              with:
+                distribution: 'corretto'
+                java-version: '20'
+            - run: gradle build
+
+
+# gradle build soll erst bei erfolgreichem gradle test ausgeführt werden
+
+
+# weitere gradle commands, die relevant sein werden:
+#  gradle bootJar (*)
+#  gradle bootRun
+#  gradle clean
+#  gradle check
+#
+#  gradle checkstyleMain / checkstyleTest
+#  gradle pmdMain / pmdTest
+# ...

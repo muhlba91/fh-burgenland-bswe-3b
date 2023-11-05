@@ -1,0 +1,13 @@
+# base: openjdk
+FROM openjdk:20-slim
+
+# copy jar file
+COPY build/libs/bswe3b.jar /app.jar
+
+# expose the port
+EXPOSE 8080
+
+# run jar file
+CMD ["java", "-jar", "/app.jar"]
+
+## anything we need?

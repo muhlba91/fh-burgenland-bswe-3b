@@ -1,0 +1,2 @@
+---
+web_server_content: "this is the web server with ip {{ hostvars[inventory_hostname]['ansible_host'] }}"

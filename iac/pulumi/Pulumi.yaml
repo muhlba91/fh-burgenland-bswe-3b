@@ -1,0 +1,6 @@
+name: fh-burgenland-bswe-3b-iac
+description: "FH Burgenland: Softwaremanagement 2 - IaC"
+runtime:
+  name: nodejs
+  options:
+    typescript: false

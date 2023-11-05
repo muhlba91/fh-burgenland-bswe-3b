@@ -1,0 +1,5 @@
+---
+- name: Web Server | Install
+  ansible.builtin.include_tasks: install.yml
+- name: Web Server | Configure
+  ansible.builtin.include_tasks: configure.yml

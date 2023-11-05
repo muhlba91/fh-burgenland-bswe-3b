@@ -1,0 +1,44 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:base",
+        ":dependencyDashboard",
+        ":semanticCommitTypeAll(chore)"
+    ],
+    "prHourlyLimit": 0,
+    "prConcurrentLimit": 0,
+    "baseBranches": [
+        "main"
+    ],
+    "enabledManagers": [
+        "github-actions",
+        "gradle",
+        "npm"
+    ],
+    "github-actions": {
+        "fileMatch": [
+            "^(workflow-templates|\\.github/workflows)/[^/]+\\.ya?ml$",
+            "(^|/)action\\.ya?ml$"
+        ]
+    },
+    "gradle": {
+        "fileMatch": [
+            "\\.gradle(\\.kts)?$",
+            "(^|/)gradle\\.properties$",
+            "(^|/)gradle/.+\\.toml$",
+            "(^|/)buildSrc/.+\\.kt$",
+            "\\.versions\\.toml$",
+            "(^|/)versions.props$",
+            "(^|/)versions.lock$"
+        ],
+        "timeout": 600,
+        "versioning": "gradle"
+    },
+    "npm": {
+        "fileMatch": [
+            "(^|/)package\\.json$"
+        ],
+        "rollbackPrs": true,
+        "versioning": "npm"
+    }
+}

@@ -1,0 +1,9 @@
+---
+- name: Web Server | Install | nginx
+  ansible.builtin.apt:
+    name:
+      - nginx
+    state: latest
+    update_cache: true
+  notify:
+    - Web Server | Restart nginx

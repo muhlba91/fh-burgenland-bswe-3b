@@ -1,0 +1,58 @@
+---
+name: Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels:
+  - bug
+  - triage
+assignees:
+  - muhlba91
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Tell us what you wanted to do.
+    validations:
+      required: true
+  - type: textarea
+    id: expected-results
+    attributes:
+      label: Expected Results
+      description: Let us know what you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: actual-results
+    attributes:
+      label: Actual Results
+      description: Let us know what the actual results were.
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Tell us what steps you followed to receive this bug.
+      placeholder: Please explain in detail all steps taken. This allows us to reproduce it.
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: bash
+    validations:
+      required: false
+  - type: textarea
+    id: additional-information
+    attributes:
+      label: Additional Information
+      description: Let us know any additional information about the bug, your environment, or a sample code.
+    validations:
+      required: false
